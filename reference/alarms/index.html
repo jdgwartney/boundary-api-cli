@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Alarms - Boundary API CLI</title>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script>
+
+  <style>
+    body {font-size: 90%;}
+    pre, code {font-size: 100%;}
+    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
+  </style> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Boundary API CLI</a>
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <ul class="current">
+    
+        
+        <span>Reference</span>
+            
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Alarms</a>
+                    
+                        <ul>
+                        
+                            <li class="toctree-l2"><a href="#alarm">Alarm</a></li>
+                            
+                                <li><a class="toctree-l3" href="#alarm-create">alarm-create</a></li>
+                            
+                                <li><a class="toctree-l3" href="#alarm-delete">alarm-delete</a></li>
+                            
+                                <li><a class="toctree-l3" href="#alarm-list">alarm-list</a></li>
+                            
+                                <li><a class="toctree-l3" href="#alarm-update">alarm-update</a></li>
+                            
+                        
+                        </ul>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../hostgroups">Host Groups</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../measurements">Measurements</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../metrics">Metrics</a>
+                    
+                </li>
+            
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugins">Plugins</a>
+                    
+                </li>
+            
+        
+
+    
+</ul>
+
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
+        <a href="../.."></a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    <li>Alarms</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              <h1 id="alarm">Alarm</h1>
+<p>Commands to administer definitions of metric alarms in a Boundary account.</p>
+<h2 id="alarm-create">alarm-create</h2>
+<p>Creates a alarm definition in a Boundary account.</p>
+<h3 id="usage">Usage</h3>
+<pre><code class="bash">usage: alarm-create [-h] [-l {debug,info,warning,error,critical}]
+                    [-a api_host] [-e e_mail] [-t api_token] -n alarm_name
+                    [-m metric_name] [-g aggregate] [-o operation] [-v value]
+                    -r interval [-i hostgroup_id] [-d note] [-p] [-x]
+
+Creates a new metric definition in an Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical. Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n alarm_name, --alarm-name alarm_name
+                        Name of the alarm
+  -m metric_name, --metric metric_name
+                        Name of the metric to alarm
+  -g aggregate, --trigger-aggregate aggregate
+                        Metric aggregate to alarm upon
+  -o operation, --trigger-operation operation
+                        Trigger threshold comparison
+  -v value, --trigger-threshold value
+                        Trigger threshold value
+  -r interval, --trigger-interval interval
+                        Interval to alarm on, can be one of: &quot;1 second&quot;,&quot;15
+                        seconds&quot;,&quot;1 minute&quot;,&quot;5 minutes&quot;,&quot;1 hour&quot;
+  -i hostgroup_id, --host-group-id hostgroup_id
+                        Host group the alarm applies to
+  -d note, --note note  A description or resolution of the alarm
+  -p, --per-host-notify
+                        An alarm by default will run the associated actions
+                        when any server in the host group violates the
+                        threshold, and then at the end when all servers are
+                        back within the threshold. If perHostNotify is set to
+                        true, the actions will run when ANY server in the
+                        group violates and falls back within the threshold.
+  -x, --is-disabled     Enable or disable the alarm
+</code></pre>
+
+<h3 id="examples">Examples</h3>
+<h2 id="alarm-delete">alarm-delete</h2>
+<pre><code class="bash">usage: alarm-delete [-h] [-l {debug,info,warning,error,critical}]
+                    [-a api_host] [-e e_mail] [-t api_token] -i alarm-id
+
+Deletes a metric definition from a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical. Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -i alarm-id, --alarm-id alarm-id
+                        Alarm identifier
+</code></pre>
+
+<h3 id="examples_1">Examples</h3>
+<h2 id="alarm-list">alarm-list</h2>
+<p>Returns a list of alarm definitions from a Boundary account</p>
+<h4 id="usage_1">Usage</h4>
+<pre><code class="bash">usage: alarm-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
+                  [-e e_mail] [-t api_token]
+
+List alarm definitions associated with the Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical. Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access the
+                        Boundary account
+</code></pre>
+
+<h4 id="examples_2">Examples</h4>
+<h2 id="alarm-update">alarm-update</h2>
+<h3 id="examples_3">Examples</h3>
+
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../hostgroups" class="btn btn-neutral float-right" title="Host Groups"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+    <!-- Copyright etc -->
+    </p>
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        
+      <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../hostgroups" style="color: #fcfcfc">Next &raquo;</a></span>
+    </span>
+</div>
+</body>
+</html>
