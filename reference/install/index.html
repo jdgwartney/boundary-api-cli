@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Plugins - Boundary API CLI</title>
+  <title>Install - Boundary API CLI</title>
   
 
   
@@ -44,8 +44,12 @@
         
         <span>Getting Started</span>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../install">Install</a>
+                <li class="toctree-l1 current">
+                    <a class="current" href=".">Install</a>
+                    
+                        <ul>
+                        
+                        </ul>
                     
                 </li>
             
@@ -96,15 +100,8 @@
                     
                 </li>
             
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Plugins</a>
-                    
-                        <ul>
-                        
-                            <li class="toctree-l2"><a href="#alarm-list">alarm-list</a></li>
-                            
-                        
-                        </ul>
+                <li class="toctree-l1 ">
+                    <a class="" href="../plugins">Plugins</a>
                     
                 </li>
             
@@ -136,7 +133,7 @@
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../..">Docs</a> &raquo;</li>
-    <li>Plugins</li>
+    <li>Install</li>
       <li class="wy-breadcrumbs-aside">
         
       </li>
@@ -145,25 +142,21 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="alarm-list">alarm-list</h1>
-<pre><code>usage: alarm-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
-                  [-e e_mail] [-t api_token]
+              <p>The <code>boundary</code> package can installed in the python global installation by using <code>pip</code> and running the following command:</p>
+<pre><code class="bash">$ sudo pip install boundary
+</code></pre>
 
-List alarm definitions associated with the Boundary account
+<p>It is highly recommended that you use the python <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/"><code>virtualenv</code></a> package to create an alternative python installation and then install the boundary package into this alternate python environment. Python can be an integral part of the operating system and installing the Boundary CLI package in a separate python environment prevents disturbing the global installation by upgrading to newer packages that may be required by the Boundary package.</p>
+<pre><code class="bash"># Install python virtual environment
+$ virtualenv ~/python 
+New python executable in /Users/davidg/python/bin/python
+Installing setuptools, pip...done.
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
-                        Sets logging level to one of
-                        debug,info,warning,error,critical. Default is logging
-                        is disabled
-  -a api_host, --api-host api_host
-                        Boundary API host endpoint
-  -e e_mail, --email e_mail
-                        e-mail that has access to the Boundary account
-  -t api_token, --api-token api_token
-                        API token for given e-mail that has access the
-                        Boundary account
+# Activate the new python environment
+$ . ~/python/bin/activate 
+
+#  Install boundary package
+$ pip install boundary
 </code></pre>
 
 
@@ -173,10 +166,10 @@ optional arguments:
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sources" class="btn btn-neutral float-right" title="Sources"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../configuration" class="btn btn-neutral float-right" title="Configuring"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../metrics" class="btn btn-neutral" title="Metrics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -202,8 +195,8 @@ optional arguments:
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../metrics" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="../sources" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span style="margin-left: 15px"><a href="../configuration" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
 </body>
