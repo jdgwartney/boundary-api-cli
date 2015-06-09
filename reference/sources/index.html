@@ -45,7 +45,7 @@
         <span>Getting Started</span>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../install">Install</a>
+                    <a class="" href="../../install">Install</a>
                     
                 </li>
             
@@ -148,9 +148,11 @@
 </div>
           <div role="main">
             <div class="section">
-              <h2 id="source-delete">source-delete</h2>
-<pre><code class="bash">(python)lerma:boundary-api-cli davidg$ source-delete -h
-usage: source-delete [-h] [-l {debug,info,warning,error,critical}]
+              <p>Commands to administer sources in a Boundary account.</p>
+<h2 id="source-delete">source-delete</h2>
+<p><strong>API Documentation</strong></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: source-delete [-h] [-l {debug,info,warning,error,critical}]
                      [-a api_host] [-e e_mail] [-t api_token] -s
                      source1[,source2]
 
@@ -171,10 +173,12 @@ optional arguments:
                         Boundary account
   -s source1[,source2], --sources source1[,source2]
                         List of sources to delete
-
 </code></pre>
 
 <h2 id="source-list">source-list</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/account/sources/:lastModified?">http://premium-documentation.boundary.com/v1/get/account/sources/:lastModified?</a></p>
+<p><strong>Usage</strong></p>
 <pre><code class="bash">usage: source-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
                    [-e e_mail] [-t api_token]
 

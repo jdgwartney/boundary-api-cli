@@ -45,7 +45,7 @@
         <span>Getting Started</span>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../install">Install</a>
+                    <a class="" href="../../install">Install</a>
                     
                 </li>
             
@@ -88,6 +88,9 @@
                             
                         
                             <li class="toctree-l2"><a href="#alarm-list">alarm-list</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#alarm-update">alarm-update</a></li>
                             
                         
                         </ul>
@@ -153,8 +156,10 @@
             <div class="section">
               <p>Commands to administer definitions of metric alarms in a Boundary account.</p>
 <h2 id="alarm-create">alarm-create</h2>
-<pre><code class="bash">(python)lerma:boundary-api-cli davidg$ alarm-create -h
-usage: alarm-create [-h] [-l {debug,info,warning,error,critical}]
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/post/alarms">http://premium-documentation.boundary.com/v1/post/alarms</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: alarm-create [-h] [-l {debug,info,warning,error,critical}]
                     [-a api_host] [-e e_mail] [-t api_token] -n alarm_name -m
                     metric_name -g {sum,avg,max,min} -o {eq,gt,lt} -v value -r
                     {1 second,15 seconds,1 minute,5 minutes,1 hour,1.5 hours,3
@@ -204,6 +209,9 @@ optional arguments:
 </code></pre>
 
 <h2 id="alarm-delete">alarm-delete</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/delete/alarm/:alarmId">http://premium-documentation.boundary.com/v1/delete/alarm/:alarmId</a></p>
+<p><strong>Usage</strong></p>
 <pre><code class="bash">usage: alarm-delete [-h] [-l {debug,info,warning,error,critical}]
                     [-a api_host] [-e e_mail] [-t api_token] -i alarm-id
 
@@ -227,6 +235,9 @@ optional arguments:
 </code></pre>
 
 <h2 id="alarm-list">alarm-list</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/alarms">http://premium-documentation.boundary.com/v1/get/alarms</a></p>
+<p><strong>Usage</strong></p>
 <pre><code class="bash">usage: alarm-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
                   [-e e_mail] [-t api_token]
 
@@ -248,6 +259,9 @@ optional arguments:
 
 </code></pre>
 
+<h2 id="alarm-update">alarm-update</h2>
+<p><strong>API Documentation</strong></p>
+<p><strong>Usage</strong></p>
 
             </div>
           </div>

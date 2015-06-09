@@ -45,7 +45,7 @@
         <span>Getting Started</span>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../install">Install</a>
+                    <a class="" href="../../install">Install</a>
                     
                 </li>
             
@@ -101,7 +101,28 @@
                     
                         <ul>
                         
-                            <li class="toctree-l2"><a href="#alarm-list">alarm-list</a></li>
+                            <li class="toctree-l2"><a href="#plugin-add">plugin-add</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-get">plugin-get</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-get-components">plugin-get-components</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-install">plugin-install</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-installed">plugin-installed</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-list">plugin-list</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-remove">plugin-remove</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#plugin-uninstall">plugin-uninstall</a></li>
                             
                         
                         </ul>
@@ -145,25 +166,218 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="alarm-list">alarm-list</h1>
-<pre><code>usage: alarm-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
-                  [-e e_mail] [-t api_token]
+              <p>Commands to administer plugins in a Boundary account.</p>
+<h2 id="plugin-add">plugin-add</h2>
+<p><strong>API Documentation</strong></p>
+<p>(http://premium-documentation.boundary.com/v1/put/plugins/private/:plugin/:org/:repo)[http://premium-documentation.boundary.com/v1/put/plugins/private/:plugin/:org/:repo]</p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-add [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
+                  [-e e_mail] [-t api_token] -n plugin_name -o
+                  organization_name -r respository_name
 
-List alarm definitions associated with the Boundary account
+Imports a meter plugin from a github repository into a Boundary account
 
 optional arguments:
   -h, --help            show this help message and exit
   -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
                         Sets logging level to one of
-                        debug,info,warning,error,critical. Default is logging
+                        debug,info,warning,error,critical.Default is logging
                         is disabled
   -a api_host, --api-host api_host
                         Boundary API host endpoint
   -e e_mail, --email e_mail
                         e-mail that has access to the Boundary account
   -t api_token, --api-token api_token
-                        API token for given e-mail that has access the
+                        API token for given e-mail that has access to the
                         Boundary account
+  -n plugin_name, --plugin-name plugin_name
+                        Plugin name
+  -o organization_name, --organization-name organization_name
+                        Name of the github user or organization
+  -r respository_name, --repository-name respository_name
+                        Name of the github repository
+</code></pre>
+
+<h2 id="plugin-get">plugin-get</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/plugins/:plugin">http://premium-documentation.boundary.com/v1/get/plugins/:plugin</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-get [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
+                  [-e e_mail] [-t api_token] -n plugin_name
+
+Get the details of a plugin in a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n plugin_name, --plugin-Name plugin_name
+                        Plugin name
+</code></pre>
+
+<h2 id="plugin-get-components">plugin-get-components</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/plugins/:plugin/components">http://premium-documentation.boundary.com/v1/get/plugins/:plugin/components</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-get-components [-h] [-l {debug,info,warning,error,critical}]
+                             [-a api_host] [-e e_mail] [-t api_token] -n
+                             plugin_name
+
+Get the components of a plugin in a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n plugin_name, --plugin-Name plugin_name
+                        Plugin name
+</code></pre>
+
+<h2 id="plugin-install">plugin-install</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/put/plugins/installed/:plugin">http://premium-documentation.boundary.com/v1/put/plugins/installed/:plugin</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-install [-h] [-l {debug,info,warning,error,critical}]
+                      [-a api_host] [-e e_mail] [-t api_token] -n plugin_name
+
+Installs a plugin into a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n plugin_name, --plugin-name plugin_name
+                        Plugin name
+</code></pre>
+
+<h2 id="plugin-installed">plugin-installed</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/plugins/installed">http://premium-documentation.boundary.com/v1/get/plugins/installed</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-installed [-h] [-l {debug,info,warning,error,critical}]
+                        [-a api_host] [-e e_mail] [-t api_token]
+
+Gets the plugins installed into a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+</code></pre>
+
+<h2 id="plugin-list">plugin-list</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/plugins">http://premium-documentation.boundary.com/v1/get/plugins</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
+                   [-e e_mail] [-t api_token]
+
+Lists the plugins in a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+</code></pre>
+
+<h2 id="plugin-remove">plugin-remove</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/delete/plugins/private/:plugin">http://premium-documentation.boundary.com/v1/delete/plugins/private/:plugin</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-remove [-h] [-l {debug,info,warning,error,critical}]
+                     [-a api_host] [-e e_mail] [-t api_token] -n plugin_name
+
+Remove a staged pre-release meter plugin from a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n plugin_name, --plugin-name plugin_name
+                        Plugin name
+</code></pre>
+
+<h2 id="plugin-uninstall">plugin-uninstall</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/delete/plugins/installed/:plugin">http://premium-documentation.boundary.com/v1/delete/plugins/installed/:plugin</a></p>
+<p><strong>Usage</strong></p>
+<pre><code class="bash">usage: plugin-uninstall [-h] [-l {debug,info,warning,error,critical}]
+                        [-a api_host] [-e e_mail] [-t api_token] -n
+                        plugin_name [-d] [-r]
+
+Uninstalls a plugin from a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n plugin_name, --plugin-name plugin_name
+                        Plugin name
+  -d, --remove-Dashes   Remove dashboards associated with the plugin
+  -r, --remove-Metrics  Remove metrics associated with the plugin
 </code></pre>
 
 

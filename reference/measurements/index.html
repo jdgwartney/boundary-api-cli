@@ -45,7 +45,7 @@
         <span>Getting Started</span>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../install">Install</a>
+                    <a class="" href="../../install">Install</a>
                     
                 </li>
             
@@ -91,7 +91,10 @@
                     
                         <ul>
                         
-                            <li class="toctree-l2"><a href="#alarm-list">alarm-list</a></li>
+                            <li class="toctree-l2"><a href="#measurement-create">measurement-create</a></li>
+                            
+                        
+                            <li class="toctree-l2"><a href="#measurement-get">measurement-get</a></li>
                             
                         
                         </ul>
@@ -145,25 +148,78 @@
 </div>
           <div role="main">
             <div class="section">
-              <h1 id="alarm-list">alarm-list</h1>
-<pre><code>usage: alarm-list [-h] [-l {debug,info,warning,error,critical}] [-a api_host]
-                  [-e e_mail] [-t api_token]
+              <p>Commands to insert and extract measurements from a Boundary account.</p>
+<h2 id="measurement-create">measurement-create</h2>
+<p><strong>API Documentation</strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/post/measurements">http://premium-documentation.boundary.com/v1/post/measurements</a></p>
+<p><strong>Usage</strong></p>
+<pre><code>usage: measurement-create [-h] [-l {debug,info,warning,error,critical}]
+                          [-a api_host] [-e e_mail] [-t api_token] -n
+                          metric_name -m measurement [-s source]
+                          [-d timestamp]
 
-List alarm definitions associated with the Boundary account
+Adds a measurement value to a Boundary account
 
 optional arguments:
   -h, --help            show this help message and exit
   -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
                         Sets logging level to one of
-                        debug,info,warning,error,critical. Default is logging
+                        debug,info,warning,error,critical.Default is logging
                         is disabled
   -a api_host, --api-host api_host
                         Boundary API host endpoint
   -e e_mail, --email e_mail
                         e-mail that has access to the Boundary account
   -t api_token, --api-token api_token
-                        API token for given e-mail that has access the
+                        API token for given e-mail that has access to the
                         Boundary account
+  -n metric_name, --metric-name metric_name
+                        Metric identifier
+  -m measurement, --measurement measurement
+                        Measurement value
+  -s source, --source source
+                        Source of measurement. Defaults to the host where the
+                        command is run
+  -d timestamp, --timestamp timestamp
+                        Time of occurrence of the measurement in either epoch
+                        seconds or epoch milliseconds. Defaults to the receipt
+                        time at Boundary
+
+</code></pre>
+
+<h2 id="measurement-get">measurement-get</h2>
+<p><strong> API Documentation </strong></p>
+<p><a href="http://premium-documentation.boundary.com/v1/get/measurements/:metric">http://premium-documentation.boundary.com/v1/get/measurements/:metric</a></p>
+<p><strong> Usage </strong></p>
+<pre><code class="bash">usage: measurement-get [-h] [-l {debug,info,warning,error,critical}]
+                       [-a api_host] [-e e_mail] [-t api_token] -n metric_name
+                       [-g aggregate] [-s source] -b start [-d end]
+
+Retrieves measurement values from a metric in a Boundary account
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l {debug,info,warning,error,critical}, --log-level {debug,info,warning,error,critical}
+                        Sets logging level to one of
+                        debug,info,warning,error,critical.Default is logging
+                        is disabled
+  -a api_host, --api-host api_host
+                        Boundary API host endpoint
+  -e e_mail, --email e_mail
+                        e-mail that has access to the Boundary account
+  -t api_token, --api-token api_token
+                        API token for given e-mail that has access to the
+                        Boundary account
+  -n metric_name, --name metric_name
+                        Metric identifier
+  -g aggregate, --aggregate aggregate
+                        Metric default aggregate
+  -s source, --source source
+                        Source of measurement
+  -b start, --start start
+                        Start of time range as ISO 8601 string or epoch
+                        seconds
+  -d end, --end end     End of time range as ISO 8601 string or epoch seconds
 </code></pre>
 
 

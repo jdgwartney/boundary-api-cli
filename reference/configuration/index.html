@@ -45,7 +45,7 @@
         <span>Getting Started</span>
             
                 <li class="toctree-l1 ">
-                    <a class="" href="../install">Install</a>
+                    <a class="" href="../../install">Install</a>
                     
                 </li>
             
@@ -151,7 +151,8 @@
 </div>
           <div role="main">
             <div class="section">
-              <p>The Boundary CLI uses environment variables for configuration information (user, password, etc) to execute against the Boundary REST APIs, and optionally this information can be overridden via the command line.</p>
+              <p>The Boundary CLI uses environment variables for authentication information (user, password, etc) and end-point 
+to execute against the Boundary REST APIs, and optionally this information can be overridden via the command line.</p>
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Environment variables are used to provide the credentials and the endpoint to execute the Boundary API against.</p>
 <table>
@@ -177,14 +178,16 @@
 </tbody>
 </table>
 <p></br>
-Use the following template to add to your Bash shell to set the environment values specific to your account:</p>
+Use the following template, and replace with your account values, and add to your Bash shell <code>.bash_profile</code> or
+<code>.bashrc</code> to set the environment values specific to your account:</p>
 <pre><code class="bash">export BOUNDARY_API_HOST=&quot;premium.boundary.com&quot;
 export BOUNDARY_EMAIL=&quot;dude@some.company.com&quot;
 export BOUNDARY_API_TOKEN=&quot;api.8cb8d721d8-9999&quot;
 </code></pre>
 
 <h2 id="common-command-line-arguments">Common Command Line Arguments</h2>
-<p>Alternatively, you can provide credentials on the command line, as well configure the logging output, and get help on a specific command.</p>
+<p>Alternatively, you can provide credentials on the command line, as well as configure the logging output,
+and get help on a specific command.</p>
 <table>
 <thead>
 <tr>
@@ -230,7 +233,9 @@ optional arguments:
 </code></pre>
 
 <h2 id="command-specific-command-line-arguments">Command Specific Command Line Arguments</h2>
-<p>Some CLI commands may require additional command line arguments to provide additional data required for an API call. Command line specific options can be displayed by running the command with a <code>-h</code> or <code>--help</code> as shown here for <code>metric-create</code>:</p>
+<p>Some CLI commands may require additional arguments to provide additional data required for an API call.
+Command line specific options can be displayed by running the command
+with a <code>-h</code> or <code>--help</code> as shown here for <code>metric-create</code>:</p>
 <pre><code class="bash">$ metric-create -h
 usage: metric-create [-h] [-l {debug,info,warning,error,critical}]
                      [-a api_host] [-e e_mail] [-t api_token] -n metric_name
@@ -281,7 +286,7 @@ optional arguments:
         <a href="../examples" class="btn btn-neutral float-right" title="Examples"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../install" class="btn btn-neutral" title="Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../install" class="btn btn-neutral" title="Install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -307,7 +312,7 @@ optional arguments:
 <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
         
-      <span><a href="../install" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      <span><a href="../../install" style="color: #fcfcfc;">&laquo; Previous</a></span>
       <span style="margin-left: 15px"><a href="../examples" style="color: #fcfcfc">Next &raquo;</a></span>
     </span>
 </div>
