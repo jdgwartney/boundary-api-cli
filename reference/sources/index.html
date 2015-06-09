@@ -1,155 +1,178 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Sources - Boundary API CLI</title>
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script>
-
-  <style>
-    body {font-size: 90%;}
-    pre, code {font-size: 100%;}
-    h3, h4, h5, h6 {color: #2980b9; font-weight: 300}
-  </style> 
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> Boundary API CLI</a>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-      </div>
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-      <ul class="current">
-    
-        
-        <span>Getting Started</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../install">Install</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../configuration">Configuring</a>
-                    
-                </li>
-            
-        
+        <title>Sources - Boundary API CLI</title>
 
-    
-        
-        <span>Using</span>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../../examples">Examples</a>
-                    
-                </li>
-            
-        
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
 
-    
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
         
-        <span>Reference</span>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-63924130-1', 'http://boundary.github.io/boundary-api-cli/');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../actions">Actions</a>
-                    
-                </li>
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../alarms">Alarms</a>
-                    
-                </li>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Boundary API CLI</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
             
-                <li class="toctree-l1 ">
-                    <a class="" href="../hostgroups">Host Groups</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../measurements">Measurements</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../metrics">Metrics</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 ">
-                    <a class="" href="../plugins">Plugins</a>
-                    
-                </li>
-            
-                <li class="toctree-l1 current">
-                    <a class="current" href=".">Sources</a>
-                    
-                        <ul>
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
                         
-                            <li class="toctree-l2"><a href="#source-delete">source-delete</a></li>
-                            
+                            <li >
+                                <a href="../../install">Installing</a>
+                            </li>
                         
-                            <li class="toctree-l2"><a href="#source-list">source-list</a></li>
-                            
+                            <li >
+                                <a href="../../configuration">Configuring</a>
+                            </li>
                         
                         </ul>
-                    
-                </li>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Using <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../../examples">Examples</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reference <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../actions">Actions</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../alarms">Alarms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../hostgroups">Host Groups</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../measurements">Measurements</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../metrics">Metrics</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../plugins">Plugins</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href=".">Sources</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
             
-        
 
-    
-</ul>
-
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="icon icon-reorder"></i>
-        <a href="../.."></a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
-    <li>Sources</li>
-      <li class="wy-breadcrumbs-aside">
-        
-      </li>
-  </ul>
-  <hr/>
+            
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li >
+                    <a rel="next" href="../plugins">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a rel="prev" >
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+            </ul>
+            
+        </div>
+    </div>
 </div>
-          <div role="main">
-            <div class="section">
-              <p>Commands to administer sources in a Boundary account.</p>
-<h2 id="source-delete">source-delete</h2>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#sources">Sources</a></li>
+        
+            <li><a href="#source-delete">source-delete</a></li>
+        
+            <li><a href="#source-list">source-list</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="sources">Sources</h2>
+<h3 id="source-delete">source-delete</h3>
 <p><strong>API Documentation</strong></p>
 <p><strong>Usage</strong></p>
 <pre><code class="bash">usage: source-delete [-h] [-l {debug,info,warning,error,critical}]
@@ -175,7 +198,7 @@ optional arguments:
                         List of sources to delete
 </code></pre>
 
-<h2 id="source-list">source-list</h2>
+<h3 id="source-list">source-list</h3>
 <p><strong>API Documentation</strong></p>
 <p><a href="http://premium-documentation.boundary.com/v1/get/account/sources/:lastModified?">http://premium-documentation.boundary.com/v1/get/account/sources/:lastModified?</a></p>
 <p><strong>Usage</strong></p>
@@ -199,43 +222,22 @@ optional arguments:
                         Boundary account
 </code></pre>
 
-
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../plugins" class="btn btn-neutral" title="Plugins"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-    <!-- Copyright etc -->
-    </p>
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-        
-      <span><a href="../plugins" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      <span style="margin-left: 15px"><a href="" style="color: #fcfcfc">Next &raquo;</a></span>
-    </span>
 </div>
-</body>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
 </html>
